@@ -1,0 +1,86 @@
+# ===================================
+# Go Build and Binary Files
+# ===================================
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Binaries for programs and plugins
+/bin/
+/build/
+/dist/
+/out/
+/release/
+
+# ===================================
+# Go Modules and Dependencies
+# ===================================
+# Go workspace files
+go.work
+go.work.sum
+
+# Vendor directory (if using vendoring)
+vendor/
+
+# ===================================
+# Logs and Debug Files
+# ===================================
+*.log
+*.trace
+*.prof
+*.pprof
+*.cover
+*.tmp
+*.swp
+*.swo
+
+# ===================================
+# IDE / Editor Files
+# ===================================
+# VS Code
+.vscode/
+# JetBrains (GoLand)
+.idea/
+# Sublime
+*.sublime-workspace
+*.sublime-project
+
+# ===================================
+# OS Generated Files
+# ===================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===================================
+# Environment / Secrets
+# ===================================
+.env
+.env.*
+*.key
+*.pem
+*.crt
+*.cert
+*.csr
+
+# ===================================
+# Miscellaneous
+# ===================================
+# Temporary folders
+tmp/
+temp/
+.cache/
+coverage/
+
+# ===================================
+# AIR (Live Reload) Configuration
+# ===================================
+# Air generates .air directory for temp builds
+.air/
+# Sometimes Air creates a temporary binary here
+tmp/
+air.log
