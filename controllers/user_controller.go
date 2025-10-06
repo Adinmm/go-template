@@ -12,7 +12,6 @@ import (
 func Create(c *fiber.Ctx) error {
 	var user models.User
 
-
 	if err := c.BodyParser(&user); err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"status_code": fiber.StatusBadRequest,
@@ -21,7 +20,6 @@ func Create(c *fiber.Ctx) error {
 		})
 	}
 
-	
 	if user.Password == "" {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"status_code": fiber.StatusBadRequest,
@@ -29,7 +27,6 @@ func Create(c *fiber.Ctx) error {
 		})
 	}
 
-	
 	passwordHashed, err := utils.HashPassword(user.Password)
 	if err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
@@ -41,7 +38,6 @@ func Create(c *fiber.Ctx) error {
 
 	user.Password = passwordHashed
 
-
 	result := config.DB.Create(&user)
 	if result.Error != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
@@ -51,7 +47,6 @@ func Create(c *fiber.Ctx) error {
 		})
 	}
 
-	
 	user.Password = ""
 
 	return c.Status(fiber.StatusCreated).JSON(fiber.Map{
